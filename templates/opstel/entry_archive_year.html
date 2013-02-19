@@ -1,0 +1,17 @@
+{% extends "opstel/base_entries.html" %}
+{% block title %}{{ block.super }} | {{ year }}{% endblock %}
+
+{% block content %} 
+{% load url from future %}
+<h2 class="goth">Entries in {{ year }}</h2>
+<ul class="datelist">
+	{% for month in date_list %}
+		<li>
+   			<a href="{% url 'blog_entry_archive_month' year month|date:"b" %}"> 
+   				<h2>{{ month|date:"F" }}</h2>
+   			</a>
+		</li> 
+	{% endfor %}
+</ul> 
+{% endblock %}
+

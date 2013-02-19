@@ -1,0 +1,32 @@
+{% block content %}
+
+<h2>Entry Archive</h2>
+    
+	{% for entry_year in list_entry %}
+	    <ul class="year">{{entry_year.keys.0}}
+	        {% for month, entrys in entry_year.values.0.items %}
+	            <!--show only months with events! -->
+	            {% if entrys %} 
+	                <li id="{{entry_year.keys.0}}-{{month}}" class="month">
+	                    <div class="month-data">
+	                        <div class="collapsed">►&nbsp;</div>
+	                        <div class="expanded" style="display:none;">▼&nbsp;</div>
+	                        <span class="name">{{entrys.0.pub_date|date:"F"}}</span>
+	                        <span class="counter"> ({{entrys|length}})</span>
+	                    </div>
+	                    <ul class="events" style="display:none;">
+	                    {% for entry in entrys %}
+	                        <li class="event">
+	                        <a class="title" href="{{ entry.get_absolute_url }}">{{entry.title}}</a>
+	                        <div class="date">{{entry.pub_date|date:"j M Y"}}</div>
+	                        </li>
+	                    {% endfor %}
+	                    </ul>
+	                </li>
+	            {% endif %}
+	        </li>
+	        {% endfor %}
+	    </ul>
+	{% endfor %}
+	
+{% endblock %}

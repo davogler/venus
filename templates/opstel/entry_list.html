@@ -1,0 +1,13 @@
+{% extends "opstel/base_categories.html" %}
+
+{% block title %}{{ block.super }} | {{ category.title }}{% endblock %}
+
+
+{% block content %}
+    <h2 class="goth">Blog: {{ category.title }}</h2>
+    {% for object in object_list %}
+    
+      <p><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></p>
+    {% endfor %}
+{% endblock %}
+
