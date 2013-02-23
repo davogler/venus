@@ -11,8 +11,7 @@ class Category(models.Model):
 	class Meta:
 		ordering = ['title']
 		verbose_name_plural = "Categories"
-		#app_label = "blog"
-	
+			
 	def live_entry_set(self):
 		from opstel.models import Entry
 		return self.entry_set.filter(status=Entry.LIVE_STATUS)

@@ -188,7 +188,16 @@ TINYMCE_SPELLCHECKER = False
 TINYMCE_COMPRESSOR = False
 TINYMCE_FILEBROWSER = True
 
+# For Grappelli Dashboard:
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.request",
+    "django.core.context_processors.i18n",
+    'django.contrib.messages.context_processors.messages',
+)
+
+GRAPPELLI_INDEX_DASHBOARD = 'venus.dashboard.CustomIndexDashboard'
 
 
 INSTALLED_APPS = (
@@ -198,6 +207,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli.dashboard',
     'grappelli',
     'filebrowser',
     'django.contrib.admin',
