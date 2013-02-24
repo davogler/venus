@@ -25,7 +25,7 @@ class CustomIndexDashboard(Dashboard):
         self.children.append(modules.LinkList(
             _('Quick links'),
             column=1,
-            collapsible=False,
+            collapsible=True,
             children=[
                 [_('Return to site'), '/'],
                 [_('Change password'),
@@ -55,7 +55,7 @@ class CustomIndexDashboard(Dashboard):
         self.children.append(modules.RecentActions(
             title=_('Recent Actions'),
             column=2,
-            collapsible=False,
+            collapsible=True,
             limit=5,
         ))
         
