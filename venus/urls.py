@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'venus.views.home', name='home'),
     # url(r'^venus/', include('venus.foo.urls')),
+    url(r'^admin/password_reset/', include('password_reset.urls')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),

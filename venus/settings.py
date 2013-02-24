@@ -36,6 +36,12 @@ INTERNAL_IPS = ('127.0.0.1',)
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
 
+EMAIL_USE_TLS = ''
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = ''
+
 #-------private settings outside of repository-----#
 
 from settings_private import *
@@ -217,6 +223,7 @@ INSTALLED_APPS = (
     'opstel',
     'tinymce',
     'flatpages_tinymce',
+    'password_reset',
 )
 
 # A sample logging configuration. The only tangible logging
